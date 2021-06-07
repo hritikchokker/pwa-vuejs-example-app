@@ -6,6 +6,9 @@ import LifecycleHooks from '../views/LifecycleHooks.vue';
 import ShoppingList from '../views/ShoppingList.vue';
 import ComputedData from '../views/ComputedData.vue';
 import Watchers from '../views/Watchers.vue';
+import DataHandlingComparison from '../views/DataHandlingComparison.vue';
+import BlogList from '../views/BlogList.vue'
+import ComponentExample from '../views/ComponentExample.vue';
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -25,6 +28,11 @@ const routes: Array<RouteConfig> = [
     component: ShoppingList
   },
   {
+    path: '/component-example',
+    name: 'ComponentExample',
+    component: ComponentExample
+  },
+  {
     path: '/computed-data',
     name: 'ComputedData',
     component: ComputedData
@@ -33,6 +41,16 @@ const routes: Array<RouteConfig> = [
     path: '/watchers',
     name: 'Watchers',
     component: Watchers
+  },
+  {
+    path: '/data-comparison',
+    name: 'DataHandlingComparison',
+    component: DataHandlingComparison
+  },
+  {
+    path: '/blog-list',
+    name: 'BlogList',
+    component: BlogList
   },
   {
     path: "/about",
