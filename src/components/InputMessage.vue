@@ -1,6 +1,6 @@
 <template>
   <div>
-    <strong>This message is from parent input</strong>
+    <strong>This message is from parent input field</strong>
     <h2>
       {{ inputValue }}
     </h2>
