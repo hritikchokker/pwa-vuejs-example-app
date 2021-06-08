@@ -11,8 +11,14 @@ import Vue from "vue";
 export default Vue.extend({
   name: "PaginationList",
   props: {
+    // items: {
+    //   type: Array,
+    // },
     items: {
       type: Array,
+      default() {
+        return [];
+      },
     },
     limit: {
       type: Number,
