@@ -30,9 +30,14 @@
       <CustomSelect :selected="selected" :options="options" />
     </div>
     <h3>Defaulting Prop types Example</h3>
-    <PaginatedList :items="snacks" :offset="offset" :limit="limit" />
-    <button @click="offset++">Increment Offset (current: {{ offset }})</button>
-    <button @click="limit++">Increment Limit (current: {{ limit }})</button>
+    <!-- <PaginatedList :items="snacks" :offset="offset" :limit="limit" /> -->
+    <!-- <button @click="offset++">Increment Offset (current: {{ offset }})</button> -->
+    <!-- <button @click="limit++">Increment Limit (current: {{ limit }})</button> -->
+    <PaginatedList :items="snacks">
+      <template #default="{ item }">
+        {{ item.content }}
+      </template>
+    </PaginatedList>
     <br />
     <br />
     <br />
@@ -43,6 +48,28 @@
       </h3>
     </Box>
     <button @click="slotCount++">Increment</button>
+    <br />
+    <br />
+    <br />
+    <h3>Named Slots example</h3>
+    <div>
+      <Article>
+        <template v-slot:title>
+          <!-- shortHand Property #title -->
+          <h3>My Article Title</h3>
+
+          <!-- <h3 v-slot:title>My Article Title</h3> -->
+          <!-- NOTE: this will throw error because vue only binds to template not native html tags -->
+        </template>
+        <template v-slot:excerpt>
+          <!-- shortHand Property #excerpt -->
+          <p>First paragraph of content</p>
+          <p>Second paragraph of content</p>
+        </template>
+        <!-- <template v-slot:default>Default template</template> -->
+        <!-- <template #default>Default template</template> -->
+      </Article>
+    </div>
   </div>
 </template>
 
@@ -55,6 +82,7 @@ import Repeat from "../components/Repeat.vue";
 import CustomSelect from "../components/CustomSelect.vue";
 import Box from "../components/Box.vue";
 import PaginateList from "../components/PaginateList.vue";
+import Article from "../components/Article.vue";
 export default Vue.extend({
   name: "ComponentExample",
   data: () => ({
@@ -99,6 +127,7 @@ export default Vue.extend({
     Message: Greeting,
     InputMessage,
     CustomSelect,
+    Article,
     Repeat,
     PaginatedList: PaginateList,
     Box,

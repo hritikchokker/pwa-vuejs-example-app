@@ -9,6 +9,10 @@ import Watchers from '../views/Watchers.vue';
 import DataHandlingComparison from '../views/DataHandlingComparison.vue';
 import BlogList from '../views/BlogList.vue'
 import ComponentExample from '../views/ComponentExample.vue';
+import CardWrapper from '../views/CardWrapper.vue';
+import Filters from '../views/Filters.vue';
+import ParentChild from '../views/ParentChild.vue';
+import Refs from '../views/Refs.vue';
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -38,9 +42,29 @@ const routes: Array<RouteConfig> = [
     component: ComputedData
   },
   {
+    path: '/refs',
+    name: 'Refs',
+    component: Refs
+  },
+  {
     path: '/watchers',
     name: 'Watchers',
     component: Watchers
+  },
+  {
+    path: '/card',
+    name: 'CardWrapper',
+    component: CardWrapper
+  },
+  {
+    path: '/parent-child',
+    name: 'ParentChild',
+    component: ParentChild
+  },
+  {
+    path: '/filter',
+    name: 'Filters',
+    component: Filters
   },
   {
     path: '/data-comparison',

@@ -1,7 +1,9 @@
 <template>
   <ul>
     <li v-for="el in currentWindow" :key="el.id">
-      {{ el.content }}
+      <!-- {{ el.content }} -->
+      <!-- using with slot -->
+      <slot :item="el" />
     </li>
   </ul>
 </template>
