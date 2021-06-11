@@ -16,6 +16,7 @@ export default Vue.extend({
     // },
     items: {
       type: Array,
+      // in case of array or objects default must be return from a factory function
       default() {
         return [];
       },

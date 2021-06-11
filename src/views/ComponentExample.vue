@@ -18,18 +18,31 @@
       <br />
       <br />
       <h3>Repeat component example</h3>
-      <Repeat :times="count" content="Repeat again." />
+      <Repeat
+        :times="count"
+        :config="{ times: 3, content: 'Repeat me.' }"
+        content="Repeat again."
+      />
       <button @click="increment()">Repeat</button>
       <br />
       <br />
       <h3>Custom Select Component</h3>
       <CustomSelect :selected="selected" :options="options" />
     </div>
-
     <h3>Defaulting Prop types Example</h3>
     <PaginatedList :items="snacks" :offset="offset" :limit="limit" />
     <button @click="offset++">Increment Offset (current: {{ offset }})</button>
     <button @click="limit++">Increment Limit (current: {{ limit }})</button>
+    <br />
+    <br />
+    <br />
+    <h3>Slots Usage in vuejs</h3>
+    <Box>
+      <h3>
+        This whole h3 is rendered in the slot with parent count {{ slotCount }}
+      </h3>
+    </Box>
+    <button @click="slotCount++">Increment</button>
   </div>
 </template>
 
@@ -40,6 +53,7 @@ import Greeting from "../components/Greeting.vue";
 import InputMessage from "../components/InputMessage.vue";
 import Repeat from "../components/Repeat.vue";
 import CustomSelect from "../components/CustomSelect.vue";
+import Box from "../components/Box.vue";
 import PaginateList from "../components/PaginateList.vue";
 export default Vue.extend({
   name: "ComponentExample",
@@ -47,6 +61,7 @@ export default Vue.extend({
     inputValue: "",
     appWho: "",
     count: 1,
+    slotCount: 1,
     selected: "salt-vinegar",
     options: [
       {
@@ -86,6 +101,7 @@ export default Vue.extend({
     CustomSelect,
     Repeat,
     PaginatedList: PaginateList,
+    Box,
   },
   methods: {
     setWho(newWho) {

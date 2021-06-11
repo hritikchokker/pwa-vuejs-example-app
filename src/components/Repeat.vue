@@ -14,6 +14,14 @@ export default Vue.extend({
     times: {
       type: Number,
     },
+    config: {
+      type: Object,
+      validator(value) {
+        return (
+          typeof value.times === "number" && typeof value.content === "string"
+        );
+      },
+    },
     content: {
       type: [String, Number],
     },
