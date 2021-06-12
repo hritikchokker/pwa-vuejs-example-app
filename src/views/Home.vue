@@ -26,6 +26,10 @@
       </v-btn>
       <p>Maximum quantity can be 30</p>
     </div>
+    <br />
+    <br />
+    <h3>Global component no need fo importing</h3>
+    <CustomButton>Click Me</CustomButton>
   </div>
 </template>
 

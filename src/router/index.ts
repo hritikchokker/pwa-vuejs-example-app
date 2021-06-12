@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
@@ -12,7 +13,10 @@ import ComponentExample from '../views/ComponentExample.vue';
 import CardWrapper from '../views/CardWrapper.vue';
 import Filters from '../views/Filters.vue';
 import ParentChild from '../views/ParentChild.vue';
+import GreetingMixinWrapper from '../views/MixinWrapper.vue';
 import Refs from '../views/Refs.vue';
+import ToDoAxiosPlugin from '../views/ToDo.vue';
+import UserForm from '../views/UserForm.vue';
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -47,9 +51,19 @@ const routes: Array<RouteConfig> = [
     component: Refs
   },
   {
+    path: '/greeting-mixin',
+    name: 'GreetingMixinWrapper',
+    component: GreetingMixinWrapper
+  },
+  {
     path: '/watchers',
     name: 'Watchers',
     component: Watchers
+  },
+  {
+    path: '/user-form',
+    name: 'UserForm',
+    component: UserForm
   },
   {
     path: '/card',
@@ -60,6 +74,11 @@ const routes: Array<RouteConfig> = [
     path: '/parent-child',
     name: 'ParentChild',
     component: ParentChild
+  },
+  {
+    path: '/toDo-plugin',
+    name: 'ToDoAxiosPlugin',
+    component: ToDoAxiosPlugin
   },
   {
     path: '/filter',

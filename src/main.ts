@@ -4,9 +4,12 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
-
+import CustomButton from "./global/components/CustomButton.vue";
+import { axiosPlugin } from "./plugins/axios";
 Vue.config.productionTip = false;
 
+Vue.component("CustomButton", CustomButton);
+Vue.use(axiosPlugin);
 new Vue({
   router,
   store,
