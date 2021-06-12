@@ -36,7 +36,8 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "src/mixins/greeting.js"
+    "src/mixins/greeting.js",
+    "src/components/JSXRender.js"
   ],
   "exclude": [
     "node_modules"

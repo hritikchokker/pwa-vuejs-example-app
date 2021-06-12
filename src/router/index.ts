@@ -17,6 +17,8 @@ import GreetingMixinWrapper from '../views/MixinWrapper.vue';
 import Refs from '../views/Refs.vue';
 import ToDoAxiosPlugin from '../views/ToDo.vue';
 import UserForm from '../views/UserForm.vue';
+import NonSFC from '../views/NonSFC.vue';
+import DynamicExample from '../views/DynamicExample.vue';
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -51,6 +53,11 @@ const routes: Array<RouteConfig> = [
     component: Refs
   },
   {
+    path: '/dynamic-component',
+    name: 'DynamicExample',
+    component: DynamicExample
+  },
+  {
     path: '/greeting-mixin',
     name: 'GreetingMixinWrapper',
     component: GreetingMixinWrapper
@@ -64,6 +71,11 @@ const routes: Array<RouteConfig> = [
     path: '/user-form',
     name: 'UserForm',
     component: UserForm
+  },
+  {
+    path: '/non-sfc',
+    name: 'NonSFC',
+    component: NonSFC
   },
   {
     path: '/card',
